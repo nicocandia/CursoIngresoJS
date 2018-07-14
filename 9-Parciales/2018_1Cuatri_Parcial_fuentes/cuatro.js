@@ -4,7 +4,7 @@ function mostrar()
 	var numeroDos;
 	var suma;
 	var resta;
-
+ 
 	numeroUno=prompt("ingrese primer numero");
 	numeroUno=parseInt(numeroUno);
 	numeroDos=prompt("ingrese numero dos");
@@ -19,16 +19,19 @@ function mostrar()
 		{
 			resta=numeroUno-numeroDos;
 			alert("resta:"+ resta);
-		}else
-		{
+		}
+
+		else
+		{	
 			suma=numeroUno+numeroDos;
-			alert("suma:"+ suma);
+			
 			if (suma>10) 
 			{
 				alert("la suma es: "+suma+" y supero el 10");
+			}else
+			{
+				alert("la suma es:"+ suma);
 			}
 		}
 	}
 }
-
-

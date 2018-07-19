@@ -5,25 +5,69 @@ El jugador seleccionará una imagen correspondiente
 a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
+var mensaje;
 
 function comenzar()
 {
-	
 
-
+	eleccionMaquina=Math.floor(Math.random() * 3)+1;
+	eleccionMaquina=parseInt(eleccionMaquina);
 }//FIN DE LA FUNCIÓN
+
 function piedra()
 {
-	
+	switch(eleccionMaquina)
+	{
+		case 1:
+			mensaje="usted empato";
+			break;
 
+		case 2:
+			mensaje="usted perdio";
+			break;
+
+		case 3:
+			mensaje="usted gano";
+			break;
+	}
+	alert(mensaje);
 }//FIN DE LA FUNCIÓN
+
 function papel()
 {
+	switch(eleccionMaquina)
+	{
+		case 1:
+			mensaje="usted gano";
+			break;
 
+		case 2:
+			mensaje="usted empato";
+			break;
 
+		case 3:
+			mensaje="usted perdio";
+			break;
+	}
+	alert(mensaje);
 }//FIN DE LA FUNCIÓN
+
 function tijera()
 {
-	
+	switch(eleccionMaquina)
+	{
+		case 1:
+			mensaje="usted perdio";
+			break;
+
+		case 2:
+			mensaje="usted gano";
+			break;
+
+		case 3:
+			mensaje="usted empato";
+			break;
+	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

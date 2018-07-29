@@ -2,39 +2,40 @@ function mostrar()
 {
 
 	var contador=0;
+	// declarar variables
+	var numero;
 	var maximo;
 	var minimo;
-	var numeroIngresado;
 	var respuesta='si';
-	//maximo=-999999;
-	//minimo=999999;
-	
+
+
 	while(respuesta!='no')
 	{
+		numero=prompt("ingrese numero");
+		numero=parseInt(numero);
+		respuesta=prompt("ingrese no para salir");
+	
 		contador++;
-		numeroIngresado=prompt("ingrese numero");
-		numeroIngresado=parseInt(numeroIngresado);
-
-		if(contador==1 )
+		if (contador==1) 
 		{
-			maximo=numeroIngresado;
-			minimo=numeroIngresado;
+			maximo=numero;
+			minimo=numero;
 		}
 		else
-		{
-			if(numeroIngresado>maximo)
+			if(numero>maximo)
 			{
-				maximo=numeroIngresado;
+				maximo=numero;
 			}
-			if (numeroIngresado<minimo) 
+			if(numero<minimo)
 			{
-				minimo=numeroIngresado;
+				minimo=numero;
 			}
 		}
-	respuesta=prompt("ingrese no para salir");
-	
-	}
-	
+
 	document.getElementById('maximo').value=maximo;
 	document.getElementById('minimo').value=minimo;
+
+
+
+
 }//FIN DE LA FUNCIÓN

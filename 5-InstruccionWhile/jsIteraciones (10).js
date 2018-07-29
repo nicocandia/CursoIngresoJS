@@ -12,8 +12,8 @@ function mostrar()
 	var contadorNegativo;
 	var contadorCeros;
 	var contadorPares;
-	var resto;
 	var respuesta="si";
+	var diferencia;
 
 	sumaPositivo=0;
 	sumaNegativo=0;
@@ -28,40 +28,57 @@ function mostrar()
 		numero=prompt("ingrese numero #"+ contador);
 		numero=parseInt(numero);
 		respuesta=prompt("ingrese no para salir");
-		resto=numero%2;
 	
 	if (numero>0) 
 	{
 		sumaPositivo=sumaPositivo+numero;
 		contadorPositivo++;
 	}
-	if (numero<0) 
-	{
-		sumaNegativo=sumaNegativo+numero;
-		contadorNegativo++;
+	else
+		if (numero<0)
+		{ 
+			sumaNegativo=sumaNegativo+numero;
+			contadorNegativo++;
 	}
-	if(numero==0)
+	else
 	{
 		contadorCeros++;
 	}
-	if(resto==0)
+	
+	if((numero%2)==0)
 	{
 		contadorPares++;
 	}
 	}
 
-	promedioPositivo=sumaPositivo/contadorPositivo;
-	promedioNegativo=sumaNegativo/contadorNegativo;
+	diferencia=sumaPositivo - sumaNegativo*(-1);
 
-	document.write("suma de los positivos: "+ sumaPositivo);
-	document.write("suma de los negativos: "+ sumaNegativo);
-	document.write("cantidad de los positivos: "+ contadorPositivo);
-	document.write("cantidad de los negativos: "+ contadorNegativo);
-	document.write("cantidad de numeros pares: "+ contadorPares);
-	document.write("promedio de los positivos: "+ promedioPositivo);
-	document.write("promedio de los negativos: "+ promedioNegativo);
-	document.write("cantidad de numeros cero: "+ contadorCeros);
+	document.write("suma de los positivos: "+ sumaPositivo+"<br>");
+	document.write("suma de los negativos: "+ sumaNegativo+"<br>");
+	document.write("cantidad de los positivos: "+ contadorPositivo+"<br>");
+	document.write("cantidad de los negativos: "+ contadorNegativo+"<br>");
+	document.write("cantidad de numeros pares: "+ contadorPares+"<br>");
+	document.write("cantidad de numeros cero: "+ contadorCeros+"<br>");
+    document.write("diferencia positivos y negativos"+ diferencia+"<br>");
 
+    if (contadorPositivo!=0) 
+    {
+    	promedioPositivo=sumaPositivo/contadorPositivo;
+    	document.write("promedio de los numeros positivos: "+ promedioPositivo+"<br>");
+    }
+    else
+    {
+    	document.write("promedios de los numeros positivos: no se puede calcular"+"<br>");
+	}
 
+	if(contadorNegativo!=0)
+	{
+		promedioNegativo=sumaNegativo/contadorNegativo;
+    	document.write("promedio de los numeros negativos: "+ promedioNegativo+"<br>");
+	}
+	else
+	{
+		document.write("promedio de los numeros negativos: no se puede calcular"+"<br>");
+	}
 
 }//FIN DE LA FUNCIÓN

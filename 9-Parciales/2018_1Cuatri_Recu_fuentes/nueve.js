@@ -1,5 +1,12 @@
 function mostrar()
 {
+	/*
+		OSO 800 15
+		OSO POLAR 900 -15
+		FOCA 300 26
+		PERRO 40 25
+		PINGÜINO 25 -30
+								*/
 	var nombre;
 	var peso;
 	var temperatura;
@@ -14,13 +21,13 @@ function mostrar()
 	var acumulaPeso;
 	var pesomaximoBajocero;
 	var pesominimoBajocero;
+	var bandera;
 
 	contadortempPar=0;
 	contador=0;
 	cantidadanimalBajocero=0;
 	acumulaPeso=0;
-	pesomaximoBajocero=0;
-	pesominimoBajocero=0;
+	bandera=0;
 
 	while(respuesta!="no")
 	{	
@@ -67,19 +74,33 @@ function mostrar()
 			}
 		}
 
-		if(temperatura<0 && contador==1)
-		{
-			cantidadanimalBajocero++;
+		
+			if(temperatura<0 )
+			{	
+				cantidadanimalBajocero++;
+				bandera++;
 
-			}
-		}
+			if(bandera==1)
+			{
+				pesomaximoBajocero=peso;
+				pesominimoBajocero=peso;
+			}else
+			
+				if(peso>pesomaximoBajocero )
+				{
+					pesomaximoBajocero=peso;
+				}
+		    	if (peso<pesominimoBajocero) 
+		    	{
+		    		pesominimoBajocero=peso;
+		    	}
+		    }
+			
 
-
-
+		
 		respuesta=prompt("digite no para salir");
 		
 		acumulaPeso=acumulaPeso+peso;
-		
 	}
 	
 	promedio=acumulaPeso/contador;
@@ -89,7 +110,5 @@ function mostrar()
 	document.write("cantidad de animales que viven a menos de cero grados: "+cantidadanimalBajocero+"<br>");
 	document.write("el promedio de peso de todos los animales es: "+promedio+"<br>")
 	document.write("el peso maximo del animal que vive bajo cero es: "+pesomaximoBajocero+ " el peso minimo del animal que vive bajo cero es: "+ pesominimoBajocero);
-
-	
 
 }
